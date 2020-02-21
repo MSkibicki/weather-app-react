@@ -19,8 +19,9 @@ class App extends Component {
     e.preventDefault();
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
+    const api_key = "ba899d98a0731f0f6a72cf5ad849d555"
     const api_call = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city},${country},id=524901&APPID=${process.env.REACT_APP_OPENWEATHER_API_KEY}&units=metric`
+      `http://api.openweathermap.org/data/2.5/weather?q=${city},${country},id=524901&APPID=${api_key}&units=metric`
     );
     const data = await api_call.json();
     if (city && country) {
